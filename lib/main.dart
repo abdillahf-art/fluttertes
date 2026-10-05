@@ -1,5 +1,5 @@
+import 'package:fluttertes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertes/calculator2_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -9,21 +9,20 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: "Belajar Flutter GetX",
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.registraion,
+      getPages: Routes.myPages,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white,
         ),
       ),
-      home: CalculatorPage(),
     );
   }
 }
