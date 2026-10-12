@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Belajar Flutter GetX",
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.registraion,
+      initialRoute: Routes.list_makanan,
       getPages: Routes.myPages,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
       ),
