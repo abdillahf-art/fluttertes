@@ -84,7 +84,7 @@ class RegistrationPage extends StatelessWidget {
                   myText: "Send",
                   onPressed: () {
                     Get.toNamed(
-                      Routes.confirm_registraion,
+                      Routes.confirm_registration,
                       arguments: {
                         "username": txtUsername.text,
                         "nama_lengkap": txtNamaLengkap.text,

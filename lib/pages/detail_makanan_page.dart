@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertes/components/custom_text.dart';
-import 'package:fluttertes/controllers/list_detail_makanan.dart'; // sesuaikan nama file
+import 'package:fluttertes/controllers/list_detail_makanan.dart';
 
 class DetailMakananPage extends StatelessWidget {
   DetailMakananPage({super.key});
@@ -18,73 +18,74 @@ class DetailMakananPage extends StatelessWidget {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
-      body: SingleChildScrollView(
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        child: Card(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // GAMBAR
-                Center(
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 15),
-                    child: Image.network(
+        children: [
+          Card(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+
+                    // GAMBAR
+                    leading: Image.network(
                       controller.image,
-                      height: 220,
+                      width: 60,
+                      height: 60,
                       fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) =>
-                          const Icon(Icons.image_not_supported, size: 100),
+                    ),
+
+                    // NAMA
+                    title: Text(
+                      controller.namaMakanan,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+
+                    // HARGA + RATING
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 5),
+                        Text(
+                          controller.hargaMakanan,
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Row(
+                          children: [
+                            const Icon(Icons.star,
+                                color: Colors.amber, size: 17),
+                            const SizedBox(width: 4),
+                            Text("${controller.rating}"),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                ),
 
-                // NAMA
-                CustomText(
-                  myText: controller.namaMakanan,
-                  fontSize: 22,
-                ),
+                  const SizedBox(height: 15),
 
-                const SizedBox(height: 5),
+                  const CustomText(myText: "Deskripsi", fontSize: 17),
+                  const SizedBox(height: 5),
+                  CustomText(myText: controller.deskripsi),
 
-                // HARGA
-                CustomText(
-                  myText: controller.hargaMakanan,
-                  fontSize: 18,
-                  myColor: Colors.blue,
-                ),
+                  const SizedBox(height: 15),
 
-                const SizedBox(height: 15),
-
-                CustomText(myText: "Rating : ⭐ ${controller.rating}"),
-
-                const SizedBox(height: 15),
-
-                const CustomText(
-                  myText: "Deskripsi",
-                  fontSize: 17,
-                ),
-
-                const SizedBox(height: 5),
-
-                CustomText(myText: controller.deskripsi),
-
-                const SizedBox(height: 15),
-
-                const CustomText(
-                  myText: "Review",
-                  fontSize: 17,
-                ),
-
-                const SizedBox(height: 5),
-
-                CustomText(myText: controller.review),
-              ],
+                  const CustomText(myText: "Review", fontSize: 17),
+                  const SizedBox(height: 5),
+                  CustomText(myText: controller.review),
+                ],
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
