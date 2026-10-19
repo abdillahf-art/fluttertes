@@ -1,21 +1,12 @@
 import 'package:get/get.dart';
+import 'package:fluttertes/models/makanan_model.dart';
 
 class ListDetailMakananController extends GetxController {
-  late String namaMakanan;
-  late String hargaMakanan;
-  late String review;
-  late String rating;
-  late String image;
-  late String deskripsi;
+  late MakananModel makanan;
 
   @override
   void onInit() {
-    final arguments = Get.arguments;
-    namaMakanan = arguments['namaMakanan'];
-    hargaMakanan = arguments['hargaMakanan'];
-    review = arguments['review'];
-    rating = arguments['rating'];
-    image = arguments['image'];
-    deskripsi = arguments['deskripsi'];
+    super.onInit();
+    makanan = Get.arguments as MakananModel;
   }
 }

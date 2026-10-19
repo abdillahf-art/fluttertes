@@ -2,7 +2,7 @@ import 'package:fluttertes/models/makanan_model.dart';
 import 'package:get/get.dart';
 
 class ListMakananController extends GetxController {
-  List<MakananModel> dataMakanan = [
+    RxList<MakananModel> dataMakanan = [
     MakananModel(
       namaMakanan: "Nasi Goreng",
       hargaMakanan: "Rp 15.000",
@@ -59,5 +59,5 @@ class ListMakananController extends GetxController {
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS96bUOYmaZWMl3tYVrn_H82cnoibjTanv977ndlql_Ps5aVQR40NnqlZXb3pKpbSy_1GUIJ-FHcek0hsfvB2kr2zxmC5iooO8DX7j_YFcq3g&s=10",
       deskripsi: "Daging sapi dimasak lama dengan santan dan rempah",
     ),
-  ];
+  ].obs;
 }

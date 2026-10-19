@@ -10,6 +10,8 @@ class DetailMakananPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final makanan = controller.makanan;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF3F6FA),
       appBar: AppBar(
@@ -30,28 +32,22 @@ class DetailMakananPage extends StatelessWidget {
                 children: [
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-
-                    // GAMBAR
                     leading: Image.network(
-                      controller.image,
-                      width: 60,
-                      height: 60,
+                      makanan.image,
+                      width: 100,
+                      height: 100,
                       fit: BoxFit.contain,
                     ),
-
-                    // NAMA
                     title: Text(
-                      controller.namaMakanan,
+                      makanan.namaMakanan,
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-
-                    // HARGA + RATING
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 5),
                         Text(
-                          controller.hargaMakanan,
+                          makanan.hargaMakanan,
                           style: const TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
@@ -63,24 +59,20 @@ class DetailMakananPage extends StatelessWidget {
                             const Icon(Icons.star,
                                 color: Colors.amber, size: 17),
                             const SizedBox(width: 4),
-                            Text("${controller.rating}"),
+                            Text(makanan.rating),
                           ],
                         ),
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 15),
-
                   const CustomText(myText: "Deskripsi", fontSize: 17),
                   const SizedBox(height: 5),
-                  CustomText(myText: controller.deskripsi),
-
+                  CustomText(myText: makanan.deskripsi),
                   const SizedBox(height: 15),
-
                   const CustomText(myText: "Review", fontSize: 17),
                   const SizedBox(height: 5),
-                  CustomText(myText: controller.review),
+                  CustomText(myText: makanan.review),
                 ],
               ),
             ),
