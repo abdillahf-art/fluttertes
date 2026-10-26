@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertes/controllers/list_makanan.dart';
 import 'package:fluttertes/pages/detail_makanan_page.dart';
+import 'package:fluttertes/routes.dart';
 
 class ListMakananPage extends StatelessWidget {
   ListMakananPage({super.key});
@@ -31,7 +32,15 @@ class ListMakananPage extends StatelessWidget {
                 child: Card(
                   child: InkWell(
                     onTap: () {
-                      Get.to(() => DetailMakananPage(), arguments: makanan);
+                  Get.toNamed(Routes.detail_makanan,arguments:
+                {
+                  'namaMakanan': makanan.namaMakanan,
+                  'hargaMakanan': makanan.hargaMakanan,
+                  'review': makanan.review,
+                  'rating': makanan.rating,
+                  'image': makanan.image,
+                  'deskripsi': makanan.deskripsi, 
+                });
                     },
                     child: ListTile(
                       title: Text(makanan.namaMakanan,
