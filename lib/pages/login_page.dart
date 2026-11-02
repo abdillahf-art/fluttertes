@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertes/controllers/login_controller.dart';
+import 'package:fluttertes/components/custom_textfield.dart';
+import 'package:fluttertes/components/custom_button.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -10,28 +12,33 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("login api")),
+      appBar: AppBar(title: const Text("login api")),
       body: Center(
         child: Column(
           children: [
-            TextField(
-              controller: controller.txtUsername,
-              decoration: InputDecoration(label: Text("input username")),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: CustomTextfield(
+                myHint: "input username",
+                txtController: controller.txtUsername,
+              ),
             ),
-            TextField(
-              controller: controller.txtPassword,
-              obscureText: true,
-              decoration: InputDecoration(label: Text("input password")),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: CustomTextfield(
+                myHint: "input password",
+                txtController: controller.txtPassword,
+                obscureText: true,
+              ),
             ),
-
             Obx(
               () => controller.isLoading.value
-                  ? Center(child: CircularProgressIndicator())
-                  : OutlinedButton(
+                  ? const Center(child: CircularProgressIndicator())
+                  : CustomButton(
+                      myText: "login",
                       onPressed: () {
                         controller.login();
                       },
-                      child: Text("login"),
                     ),
             ),
           ],
