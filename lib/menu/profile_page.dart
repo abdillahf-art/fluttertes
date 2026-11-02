@@ -71,17 +71,17 @@ class ProfilePage extends StatelessWidget {
           const Divider(),
           const ListTile(
             leading: Icon(Icons.phone),
-            title: Text("+62 812 3456 7890"),
+            title: Text("+62 877 5873 9252"),
             subtitle: Text("Mobile"),
           ),
           const ListTile(
             leading: Icon(Icons.alternate_email),
-            title: Text("@username_kamu"),
+            title: Text("@abuysigmaboy"),
             subtitle: Text("Username"),
           ),
           const ListTile(
             leading: Icon(Icons.info_outline),
-            title: Text("Mahasiswa | Suka kuliner & coding"),
+            title: Text("Siswa | Suka kuliner & coding"),
             subtitle: Text("Bio"),
           ),
 

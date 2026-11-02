@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Belajar Flutter GetX",
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.main_menu,
+      initialRoute: Routes.login,
       getPages: Routes.myPages,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),

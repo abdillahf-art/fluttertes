@@ -3,6 +3,7 @@ import 'package:fluttertes/pages/registration_page.dart';
 import 'package:fluttertes/pages/list_makanan_page.dart';
 import 'package:fluttertes/pages/detail_makanan_page.dart';
 import 'package:fluttertes/pages/main_menu.dart';
+import 'package:fluttertes/pages/login_page.dart';
 import 'package:get/get.dart';
 
 class Routes {
@@ -11,6 +12,7 @@ class Routes {
   static const String list_makanan = "/list_makanan";
   static const String detail_makanan = "/detail_makanan";
   static const String main_menu = "/main_menu";
+  static const String login = "/login";
   // dll
 
   // kita masukkan ke dalam myPages array
@@ -20,6 +22,7 @@ class Routes {
     GetPage(name: list_makanan, page: () => ListMakananPage()),
     GetPage(name: detail_makanan, page: () => DetailMakananPage()),
     GetPage(name: main_menu, page: () => MainMenuPage()),
+    GetPage(name: login, page: () => LoginPage()),
 
     // dll
   ];
